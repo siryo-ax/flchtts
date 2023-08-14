@@ -28,10 +28,13 @@ class Game {
 		}
 	}
 
-	start() {
-		let p1 = this.createPlayer("P1");
+	start(playerNumber) {
+		/*let p1 = this.createPlayer("P1");
 		let p2 = this.createPlayer("P2");
-		this.players.push(p1,p2);
+		this.players.push(p1,p2);*/
+		for(let i=1;i<=playerNumber;i++){
+			this.players.push(this.createPlayer("Joueur "+i))
+		}
 
 		console.log("Game started")
 
@@ -78,7 +81,7 @@ class Game {
 
 	gameover(player) {
 		console.log(player.getName()+" winner")
-		alert(player.getName()+"winner");
+		alert(player.getName()+"a gagné !");
 		document.getElementById("nextturn").disabled=true; 
 	}
 
