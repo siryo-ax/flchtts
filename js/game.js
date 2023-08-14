@@ -29,9 +29,6 @@ class Game {
 	}
 
 	start(playerNumber) {
-		/*let p1 = this.createPlayer("P1");
-		let p2 = this.createPlayer("P2");
-		this.players.push(p1,p2);*/
 		for(let i=1;i<=playerNumber;i++){
 			this.players.push(this.createPlayer("Joueur "+i))
 		}

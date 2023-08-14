@@ -13,12 +13,6 @@ function init() {
 			game.removeAllPlayers(); 
 		}
 
-		let playerNumber = 0;
-		
-		/*while(playerNumber<=0) {
-			playerNumber = prompt("Combien de joueurs ?",2);
-		}*/
-
 		game = new Game(301);
 		game.start(document.getElementById("playerNumber").value);
 		nextTurnButton.disabled = false;
