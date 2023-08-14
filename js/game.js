@@ -57,7 +57,7 @@ class Game {
 			this.i=0; 
 		}
 
-		this.currentlyPlaying = this.players[this.i]
+		this.currentlyPlaying = this.players[this.i];
 
 		this.pointsToAdd=0; 
 		this.darts=0;
