@@ -1,7 +1,12 @@
 function init() { 
 	let newGameButton = document.getElementById("newgame"); 
 	let nextTurnButton = document.getElementById("nextturn");
-	let game; 
+	let resetButton = document.getElementById("reset");
+
+	let game;
+	
+	nextTurnButton.disabled = true;
+	resetButton.disabled = true;
 	
 	newGameButton.addEventListener("click",()=> {
 		if(game){
@@ -10,11 +15,16 @@ function init() {
 		game = new Game(301);
 		game.start();
 		nextTurnButton.disabled = false;
+		resetButton.disabled = false;
 	}); 
 
 	nextTurnButton.addEventListener("click",()=>{
 		game.nextTurn(); 
-	}) 
+	}); 
+
+	resetButton.addEventListener("click",()=>{
+		game.reset();
+	});
 
 	let targetPoints = document.querySelector("map[name='target']").childNodes;
 

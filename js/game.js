@@ -6,7 +6,8 @@ class Game {
 		this.players = [];
 		this.currentlyPlaying = null; 
 
-		this.pointsToAdd = 0; 
+		this.pointsToAdd = 0;
+		this.darts = 0;  
 
 		this.i = 0; 
 	}
@@ -19,9 +20,12 @@ class Game {
 	}
 
 	hit(points) {
-		console.log("hit "+points);
-		this.pointsToAdd+=points;
-		this.currentlyPlaying.tempPoints(this.pointsToAdd);
+		if(this.darts<3){
+			console.log("hit "+points);
+			this.pointsToAdd+=points;
+			this.currentlyPlaying.tempPoints(this.pointsToAdd);
+			this.darts++;	
+		}
 	}
 
 	start() {
@@ -62,7 +66,14 @@ class Game {
 
 		this.currentlyPlaying = this.players[this.i]
 		this.pointsToAdd=0; 
+		this.darts=0;
 		this.currentlyPlaying.isPlaying();
+	}
+
+	reset() {
+		this.pointsToAdd=0;
+		this.darts=0;
+		this.currentlyPlaying.tempPoints(this.pointsToAdd);
 	}
 
 	gameover(player) {
