@@ -12,13 +12,6 @@ class Game {
 		this.i = 0; 
 	}
 
-	createPlayer(name) {
-		let player = new Player(name, this.winPoints); 
-		this.players.push(player);
-
-		return player;  
-	}
-
 	hit(points) {
 		if(this.darts<3){
 			console.log("hit "+points);
@@ -30,7 +23,7 @@ class Game {
 
 	start(playerNumber) {
 		for(let i=1;i<=playerNumber;i++){
-			this.players.push(this.createPlayer("Joueur "+i))
+			this.players.push(new Player("Joueur "+i,this.winPoints));
 		}
 
 		console.log("Game started")
@@ -57,7 +50,7 @@ class Game {
 		}
 
 		this.currentlyPlaying.isPlaying();
-
+		
 		this.i++; 
 		if(this.i>this.players.length-1) {
 			//return at the first player when OOB
@@ -65,9 +58,12 @@ class Game {
 		}
 
 		this.currentlyPlaying = this.players[this.i]
+
 		this.pointsToAdd=0; 
 		this.darts=0;
 		this.currentlyPlaying.isPlaying();
+
+		console.log("next turn");
 	}
 
 	reset() {
