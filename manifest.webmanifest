@@ -1,0 +1,16 @@
+{
+    "background_color": "grey",
+    "description": "Companion app to count points while playing Darts",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "img/target.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Flchtts",
+    "short_name": "Flchtts",
+    "start_url": "index.html"
+  }
+  
